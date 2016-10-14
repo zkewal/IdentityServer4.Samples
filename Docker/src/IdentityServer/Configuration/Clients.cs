@@ -36,6 +36,26 @@ namespace Host.Configuration
                         StandardScopes.Profile.Name,
                         "api1"
                     }
+                },
+                new Client
+                {
+                    ClientId = "js.tokenmanager",
+                    ClientName = "JavaScript Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris =           { "http://localhost:4200/auth.html" },
+                    PostLogoutRedirectUris = { "http://localhost:4200" },
+                    AllowedCorsOrigins =     { "http://localhost:4200" },
+
+                    AllowedScopes =
+                    {
+                        StandardScopes.OpenId.Name,
+                        StandardScopes.Profile.Name,
+                        "api1"
+                    },
+                    IdentityTokenLifetime = 3000000,
+                    AccessTokenLifetime = 3000000
                 }
             };
         }
